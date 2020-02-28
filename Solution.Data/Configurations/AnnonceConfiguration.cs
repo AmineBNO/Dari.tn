@@ -1,4 +1,6 @@
-﻿using Solution.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Solution.Domain.Entities;
+using Solution.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Solution.Data.Configurations
 {
-    public  class AnnonceConfiguration :EntityTypeConfiguration<Annonce>
+    public class AnnonceConfiguration : EntityTypeConfiguration<Annonce>
     {
 
         public AnnonceConfiguration()
@@ -17,13 +19,16 @@ namespace Solution.Data.Configurations
             HasOptional(prod => prod.Utilisateur).WithMany(cat => cat.Annonces)
                 .HasForeignKey(prood => prood.UtilisateurId)
                 .WillCascadeOnDelete(false);
-            //one to many***
-            //HasOptional(prod => prod.Abonnement).WithMany(cat => cat.Utilisateurs)
-            //   .HasForeignKey(prood => prood.AbonnementId)
-            //   .WillCascadeOnDelete(false);
+
+            // Many to Many
+                this.HasMany<Utilisateur>(r => r.Utilisateurs)
+                    .WithMany(r => r.AnnoncesContrat)
+                    .Map(c =>
+                    {
+                        c.MapLeftKey("Utilisateurs");
+                        c.MapRightKey("Annonces");
+                        c.ToTable("UserAnnonceContrat");
+                    });
         }
-
-
-
     }
 }

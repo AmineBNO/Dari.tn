@@ -24,15 +24,13 @@ namespace Solution.Domain.Entities
         public string Titre { get; set; }
         public Type type { get; set; }
         public Statut statut { get; set; }
-
-        public int? UtilisateurId { get; set; }
+        
         //propriete de navigation
+        public int? UtilisateurId { get; set; }
         [ForeignKey("UtilisateurId")]
         public virtual Utilisateur Utilisateur { get; set; }
 
-
-
-
-
+        public virtual ICollection<Utilisateur> Utilisateurs { get; set; }
+                              
     }
 }

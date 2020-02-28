@@ -1,4 +1,5 @@
-﻿using Solution.Domain.Entities;
+﻿using Solution.Data.Configurations;
+using Solution.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,14 +11,16 @@ namespace Solution.Data
 {
     public class MyContext:DbContext
     {
-        public MyContext():base("name=machaine")
+
+        public MyContext() : base("name=machaine")
         {
 
         }
+
         //les dbsets
-        public DbSet<Utilisateur> utilisateurs { get; set; }
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
         public DbSet<Abonnement> abonnements  { get; set; }
-        public DbSet<Annonce>annonces  { get; set; }
+        public DbSet<Annonce>Annonces  { get; set; }
         public DbSet<Appartement> appartements  { get; set; }
         public DbSet<BienImmobilier>  bienImmobiliers  { get; set; }
         public DbSet<Contrat>contrats  { get; set; }
@@ -29,11 +32,15 @@ namespace Solution.Data
         public DbSet<Studio>studios  { get; set; }
         public DbSet<Terrain>terrains  { get; set; }
         public DbSet<Visite> visites  { get; set; }
-    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //config + conventions
             //modelBuilder.Configurations.Add(...);
             //modelBuilder.Conventions.Add(...);
+
+            modelBuilder.Configurations.Add(new AnnonceConfiguration());
+
         }
     }
 }

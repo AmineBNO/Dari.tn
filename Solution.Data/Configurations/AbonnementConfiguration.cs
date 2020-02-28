@@ -16,6 +16,9 @@ namespace Solution.Data.Configurations
             HasOptional(prod => prod.Utilisateur).WithMany(cat => cat.Abonnements)
                 .HasForeignKey(prood => prood.UtilisateurId)
                 .WillCascadeOnDelete(false);
+
+
+
         }
     }
 }

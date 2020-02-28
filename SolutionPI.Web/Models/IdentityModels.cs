@@ -21,7 +21,7 @@ namespace SolutionPI.Web.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("machaine", throwIfV1Schema: false)
         {
         }
 
@@ -29,5 +29,7 @@ namespace SolutionPI.Web.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<AbonnementModels> abonnements { get; set; }
+
     }
 }

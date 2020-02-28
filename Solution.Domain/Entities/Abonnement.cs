@@ -11,13 +11,8 @@ namespace Solution.Domain.Entities
     public class Abonnement
 
     {
-        public enum typeAbonnement
-        { primum,gold}
-        public Abonnement()
-        {
-                
-
-        }
+        public enum typeAbonnement { primum,gold}
+        
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdAbonnement { get; set; }
@@ -26,11 +21,13 @@ namespace Solution.Domain.Entities
         public float Prix { get; set; }
         public DateTime DateDebut { get; set; }
         public DateTime DateFin { get; set; }
+        
         public int? UtilisateurId { get; set; }
         //propriete de navigation
         [ForeignKey("UtilisateurId")]
         public virtual Utilisateur Utilisateur { get; set; }
 
+        public Abonnement() { }
 
     }
 }

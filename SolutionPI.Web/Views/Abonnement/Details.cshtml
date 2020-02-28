@@ -1,0 +1,58 @@
+﻿@model SolutionPI.Web.Models.AbonnementModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AbonnementModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageAbonnementM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageAbonnementM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrixAbonnementM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrixAbonnementM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDebutAbonnementM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDebutAbonnementM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFinAbonnementM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFinAbonnementM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UtilisateurId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UtilisateurId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAbonnementM }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
