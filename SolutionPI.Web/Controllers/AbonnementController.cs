@@ -18,7 +18,6 @@ namespace SolutionPI.Web.Controllers
         {
             abonnementService = new AbonnementService();
         }
-        
 
         // GET: Abonnement
         public ActionResult Index()

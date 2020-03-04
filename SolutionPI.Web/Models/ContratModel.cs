@@ -8,24 +8,27 @@ using System.Web;
 
 namespace SolutionPI.Web.Models
 {
+
     public class ContratModel
     {
-        public ContratModel() { }
+
         public enum Motif { Location, Vente }
 
+        public ContratModel() { }
+
+        public DateTime DateContratM { get; set; }
+        public DateTime DateFinContratM { get; set; }
+        public string DescriptionM { get; set; }
+        public float PrixContratM { get; set; }
+        public Motif motifM { get; set; }
+
         [Key, Column(Order = 1)]
-        public int ClientID { get; set; }
-        public Utilisateur Client { get; set; }
+        public int ClientIDM { get; set; }
+        public Utilisateur ClientM { get; set; }
 
         [Key, Column(Order = 2)]
-        public int AnnonceId { get; set; }
-        public Annonce Annonce { get; set; }
-
-        public DateTime DateContrat { get; set; }
-        public DateTime DateFinContrat { get; set; }
-        public string Description { get; set; }
-        public float PrixContrat { get; set; }
-        public Motif motif { get; set; }
+        public int AnnonceIdM { get; set; }
+        public Annonce AnnonceM { get; set; }
 
     }
 }

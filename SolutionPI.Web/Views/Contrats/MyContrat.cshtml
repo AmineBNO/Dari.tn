@@ -1,0 +1,50 @@
+﻿@model SolutionPI.Web.Models.ContratModel
+
+@{
+    ViewBag.Title = "MyContrat";
+}
+
+<h2>MyContrat</h2>
+
+<div>
+    <h4>ContratModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateContratM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateContratM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFinContratM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFinContratM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrixContratM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrixContratM)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

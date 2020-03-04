@@ -182,6 +182,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AbonnementController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContratsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -256,6 +257,11 @@
     <Content Include="Views\Abonnement\Details.cshtml" />
     <Content Include="Views\Abonnement\Edit.cshtml" />
     <Content Include="Views\Abonnement\Delete.cshtml" />
+    <Content Include="Views\Contrats\Create.cshtml" />
+    <Content Include="Views\Contrats\Index.cshtml" />
+    <Content Include="Views\Contrats\EditContrat.cshtml" />
+    <Content Include="Views\Contrats\MyContrat.cshtml" />
+    <Content Include="Views\Contrats\DelContrat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SolutionPI.Web.Models.ContratModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateContratM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateFinContratM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrixContratM)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateContratM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateFinContratM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DescriptionM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PrixContratM)
+    </td>
+
+    @Html.HiddenFor(modelItem => item.ClientIDM)
+    @Html.HiddenFor(modelItem => item.AnnonceIdM)
+    
+<td>
+    @Html.ActionLink("Edit", "EditContrat", new { idClient = item.ClientIDM,idAnnonce = item.AnnonceIdM })
+    @Html.ActionLink("Details", "MyContrat", new { idClient = item.ClientIDM,idAnnonce = item.AnnonceIdM }) 
+    @Html.ActionLink("Delete", "DelContrat", new { idClient = item.ClientIDM,idAnnonce = item.AnnonceIdM })
+</td>
+</tr>
+}
+
+</table>
